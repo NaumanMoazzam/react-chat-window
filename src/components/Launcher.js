@@ -90,7 +90,7 @@ Launcher.propTypes = {
 Launcher.defaultProps = {
   newMessagesCount: 0,
   showEmoji: true,
-  launcherColor: "green"
+  launcherColor: "orange"
 };
 
 export default Launcher;
