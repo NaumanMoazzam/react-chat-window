@@ -2,9 +2,9 @@ coverage/
 demo/dist/
 
 # Generated build files
-es/
-lib/
-umd/
+# es/
+# lib/
+# umd/
 
 # Node
 node_modules/
