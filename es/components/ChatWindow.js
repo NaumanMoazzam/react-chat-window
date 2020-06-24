@@ -36,11 +36,13 @@ var ChatWindow = function (_Component) {
       React.createElement(Header, {
         teamName: this.props.agentProfile.teamName,
         imageUrl: this.props.agentProfile.imageUrl,
-        onClose: this.props.onClose
+        onClose: this.props.onClose,
+        launcherColor: this.props.launcherColor
       }),
       React.createElement(MessageList, {
         messages: messageList,
-        imageUrl: this.props.agentProfile.imageUrl
+        imageUrl: this.props.agentProfile.imageUrl,
+        launcherColor: this.props.launcherColor
       }),
       React.createElement(UserInput, {
         onSubmit: this.onUserInputSubmit.bind(this),

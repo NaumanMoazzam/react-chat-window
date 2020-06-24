@@ -6,7 +6,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="sc-header">
+      <div className="sc-header" style={{background: `${this.props.launcherColor}`}}>
         <img className="sc-header--img" src={this.props.imageUrl} alt="" />
         <div className="sc-header--team-name"> {this.props.teamName} </div>
         <div className="sc-header--close-button" onClick={this.props.onClose}>

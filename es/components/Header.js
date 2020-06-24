@@ -19,7 +19,7 @@ var Header = function (_Component) {
   Header.prototype.render = function render() {
     return React.createElement(
       'div',
-      { className: 'sc-header' },
+      { className: 'sc-header', style: { background: '' + this.props.launcherColor } },
       React.createElement('img', { className: 'sc-header--img', src: this.props.imageUrl, alt: '' }),
       React.createElement(
         'div',

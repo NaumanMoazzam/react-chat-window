@@ -60,6 +60,7 @@ class Launcher extends Component {
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
           showEmoji={this.props.showEmoji}
+          launcherColor={this.props.launcherColor}
         />
       </div>
     );

@@ -5460,7 +5460,7 @@ var Linkify_default = /*#__PURE__*/__webpack_require__.n(Linkify);
 var TextMessage_TextMessage = function TextMessage(props) {
   return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(
     'div',
-    { className: 'sc-message--text' },
+    { className: 'sc-message--text', style: { background: props.author === 'me' ? props.launcherColor : '#f4f7f9' } },
     external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(
       Linkify_default.a,
       { properties: { target: '_blank' } },
@@ -5562,6 +5562,8 @@ var chat_icon = __webpack_require__(5);
 var chat_icon_default = /*#__PURE__*/__webpack_require__.n(chat_icon);
 
 // CONCATENATED MODULE: ./src/components/Messages/index.js
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 function Messages_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function Messages_possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -5586,7 +5588,7 @@ var Messages_Message = function (_Component) {
   Message.prototype._renderMessageOfType = function _renderMessageOfType(type) {
     switch (type) {
       case 'text':
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_TextMessage, this.props.message);
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_TextMessage, _extends({}, this.props.message, { launcherColor: this.props.launcherColor, author: this.props.message.author }));
       case 'emoji':
         return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages_EmojiMessage, this.props.message);
       case 'file':
@@ -5648,7 +5650,7 @@ var MessageList_MessageList = function (_Component) {
           return _this2.scrollList = el;
         } },
       this.props.messages.map(function (message, i) {
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages, { message: message, key: i });
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Messages, { message: message, key: i, launcherColor: _this2.props.launcherColor });
       })
     );
   };
@@ -6117,7 +6119,7 @@ var Header_Header = function (_Component) {
   Header.prototype.render = function render() {
     return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(
       'div',
-      { className: 'sc-header' },
+      { className: 'sc-header', style: { background: '' + this.props.launcherColor } },
       external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement('img', { className: 'sc-header--img', src: this.props.imageUrl, alt: '' }),
       external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(
         'div',
@@ -6177,11 +6179,13 @@ var ChatWindow_ChatWindow = function (_Component) {
       external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_Header, {
         teamName: this.props.agentProfile.teamName,
         imageUrl: this.props.agentProfile.imageUrl,
-        onClose: this.props.onClose
+        onClose: this.props.onClose,
+        launcherColor: this.props.launcherColor
       }),
       external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_MessageList, {
         messages: messageList,
-        imageUrl: this.props.agentProfile.imageUrl
+        imageUrl: this.props.agentProfile.imageUrl,
+        launcherColor: this.props.launcherColor
       }),
       external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_UserInput, {
         onSubmit: this.onUserInputSubmit.bind(this),
@@ -6288,7 +6292,8 @@ var Launcher_Launcher = function (_Component) {
         agentProfile: this.props.agentProfile,
         isOpen: isOpen,
         onClose: this.handleClick.bind(this),
-        showEmoji: this.props.showEmoji
+        showEmoji: this.props.showEmoji,
+        launcherColor: this.props.launcherColor
       })
     );
   };
@@ -6322,7 +6327,7 @@ Launcher_Launcher.propTypes = {
 Launcher_Launcher.defaultProps = {
   newMessagesCount: 0,
   showEmoji: true,
-  launcherColor: "green"
+  launcherColor: "orange"
 };
 
 /* harmony default export */ var components_Launcher = (Launcher_Launcher);

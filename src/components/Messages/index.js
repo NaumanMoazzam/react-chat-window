@@ -10,7 +10,7 @@ class Message extends Component {
   _renderMessageOfType(type) {
     switch(type) {
     case 'text':
-      return <TextMessage {...this.props.message} />;
+      return <TextMessage {...this.props.message} launcherColor={this.props.launcherColor} author={this.props.message.author}/>;
     case 'emoji':
       return <EmojiMessage {...this.props.message} />;
     case 'file':

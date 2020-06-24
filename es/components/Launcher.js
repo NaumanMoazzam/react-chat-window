@@ -73,7 +73,8 @@ var Launcher = function (_Component) {
         agentProfile: this.props.agentProfile,
         isOpen: isOpen,
         onClose: this.handleClick.bind(this),
-        showEmoji: this.props.showEmoji
+        showEmoji: this.props.showEmoji,
+        launcherColor: this.props.launcherColor
       })
     );
   };
@@ -107,7 +108,7 @@ Launcher.propTypes = process.env.NODE_ENV !== "production" ? {
 Launcher.defaultProps = {
   newMessagesCount: 0,
   showEmoji: true,
-  launcherColor: "green"
+  launcherColor: "orange"
 };
 
 export default Launcher;

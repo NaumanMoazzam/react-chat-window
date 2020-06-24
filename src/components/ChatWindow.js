@@ -30,10 +30,12 @@ class ChatWindow extends Component {
           teamName={this.props.agentProfile.teamName}
           imageUrl={this.props.agentProfile.imageUrl}
           onClose={this.props.onClose}
+          launcherColor={this.props.launcherColor}
         />
         <MessageList
           messages={messageList}
           imageUrl={this.props.agentProfile.imageUrl}
+          launcherColor={this.props.launcherColor}
         />
         <UserInput
           onSubmit={this.onUserInputSubmit.bind(this)}
